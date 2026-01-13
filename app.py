@@ -18,7 +18,7 @@ def index():
 
 @app.route('/download/profile')
 def download_profile():
-    return send_from_directory('static', 'wifi.mobileconfig', 
+    return send_from_directory('static', 'zerocoke-net.mobileconfig', 
                                mimetype='application/x-apple-aspen-config',
                                as_attachment=True)
 
