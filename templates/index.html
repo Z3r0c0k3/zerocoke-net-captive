@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wi-Fi 보안 설정</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; text-align: center; padding: 20px; background-color: #f4f4f9; }
+        .container { max-width: 600px; margin: 0 auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        h1 { color: #333; }
+        .btn { display: block; width: 100%; padding: 15px; margin: 10px 0; background-color: #007bff; color: white; text-decoration: none; border-radius: 8px; font-size: 16px; font-weight: bold; border: none; cursor: pointer; }
+        /* Apple 버튼 중앙 정렬을 위해 margin 수정 */
+        .btn-apple { background-color: #000; margin: 10px auto; }
+        .btn-android { background-color: #3ddc84; color: #000; }
+        .btn-windows { background-color: #00a4ef; }
+        .guide { text-align: left; background: #eee; padding: 15px; border-radius: 8px; margin-top: 10px; display: none; }
+        .show { display: block; }
+        /* 가이드 내 작은 글씨 스타일 추가 */
+        .guide-note { font-size: 13px; color: #666; margin-bottom: 15px; }
+    </style>
+    <script>
+        function toggleGuide(id) {
+            document.querySelectorAll('.guide').forEach(el => el.style.display = 'none');
+            document.getElementById(id).style.display = 'block';
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h2>🔒 Z3R0C0K3 서버 내부망 연결</h2>
+        <p>기기에 맞는 설정을 진행해주세요.</p>
+
+        <button onclick="location.href='/download/profile'" class="btn btn-apple"> Apple 프로파일 다운로드</button>
+        
+        <button onclick="toggleGuide('apple-guide')" class="btn btn-apple"> Apple 연결 방법</button>
+        <div id="apple-guide" class="guide">
+            <div class="guide-note">
+                프로파일 다운로드 후 아래 절차를 따라주세요.
+            </div>
+            <ol>
+                <li>[설정] 앱을 엽니다.</li>
+                <li>상단의 <strong>[프로파일이 다운로드됨]</strong> 메뉴 선택</li>
+                <li>화면 안내에 따라 프로파일을 <strong>설치</strong> (기기 암호 입력 필요)</li>
+                <li>설치가 완료되면 Wi-Fi 목록에서 보안 Wi-Fi를 선택</li>
+                <li>서버 계정의 <strong>ID와 비밀번호</strong>를 입력하여 연결</li>
+            </ol>
+        </div>
+
+        <button onclick="toggleGuide('android-guide')" class="btn btn-android">🤖 Android 연결 방법</button>
+        <div id="android-guide" class="guide">
+            <ol>
+                <li>Wi-Fi 목록에서 보안 Wi-Fi 선택</li>
+                <li><strong>EAP 방식:</strong> TTLS 선택</li>
+                <li><strong>2단계 인증:</strong> PAP 선택 (필수)</li>
+                <li><strong>CA 인증서:</strong> 인증 안 함 또는 신뢰</li>
+                <li><strong>ID/PW:</strong> 자신의 계정 정보 입력</li>
+            </ol>
+        </div>
+
+        <button onclick="toggleGuide('windows-guide')" class="btn btn-windows">💻 Windows 연결 방법</button>
+        <div id="windows-guide" class="guide">
+            <ol>
+                <li>제어판 > 네트워크 및 공유 센터 > 새 연결 설정</li>
+                <li>무선 네트워크 수동 연결 선택</li>
+                <li>보안 종류: <strong>WPA2-Enterprise</strong></li>
+                <li>[설정 변경] > [보안] 탭 > 네트워크 인증: <strong>TTLS</strong></li>
+                <li>[설정] > 클라이언트 인증 > <strong>암호화되지 않은 암호(PAP)</strong> 선택</li>
+            </ol>
+        </div>
+    </div>
+</body>
+</html>

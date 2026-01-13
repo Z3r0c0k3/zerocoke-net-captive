@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>PayloadContent</key>
+        <array>
+            <dict>
+                <key>AutoJoin</key>
+                <true />
+                <key>EncryptionType</key>
+                <string>WPA2</string>
+                <key>HIDDEN_NETWORK</key>
+                <false />
+                <key>PayloadDescription</key>
+                <string>Install this profile to access the Z3R0C0K3 server network.</string>
+                <key>PayloadDisplayName</key>
+                <string>Z3R0C0K3 Security Access</string>
+                <key>PayloadIdentifier</key>
+                <string>kr.zerocoke.network</string>
+                <key>PayloadType</key>
+                <string>com.apple.wifi.managed</string>
+                <key>PayloadUUID</key>
+                <string>uuid-random-1234</string>
+                <key>PayloadVersion</key>
+                <integer>1</integer>
+                <key>SSID_STR</key>
+                <string>zerocoke_server_5G</string>
+                <key>EAPClientConfiguration</key>
+                <dict>
+                    <key>AcceptEAPTypes</key>
+                    <array>
+                        <integer>21</integer>
+                    </array>
+                    <key>TTLSInnerAuthentication</key>
+                    <string>PAP</string>
+                </dict>
+            </dict>
+        </array>
+        <key>PayloadDisplayName</key>
+        <string>Z3R0C0K3 Security Access</string>
+        <key>PayloadIdentifier</key>
+        <string>kr.zerocoke.network</string>
+        <key>PayloadType</key>
+        <string>Configuration</string>
+        <key>PayloadUUID</key>
+        <string>uuid-random-5678</string>
+        <key>PayloadVersion</key>
+        <integer>1</integer>
+    </dict>
+</plist>
